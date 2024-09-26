@@ -478,6 +478,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       backgroundColor: Color(0xFFECA38F),
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: Text('OLÁ, ${widget.user.name}'),
         centerTitle: true,
         backgroundColor: Color(0xFFEB5E7F),
@@ -1087,42 +1088,51 @@ class ConfiguracoesPage extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(10),
-            child: Text(
-              'SENHA',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
+  padding: const EdgeInsets.all(10),
+  child: Text(
+    'SENHA',
+    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+  ),
+),
+Container(
+  margin: EdgeInsets.all(10),
+  padding: EdgeInsets.all(16),
+  decoration: BoxDecoration(
+    color: Color(0xFFF88B70),
+    borderRadius: BorderRadius.circular(8),
+    boxShadow: [
+      BoxShadow(
+        color: Colors.black26,
+        blurRadius: 4,
+        offset: Offset(2, 2),
+      ),
+    ],
+  ),
+  child: Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: [
+      // Use TextField para mostrar a senha como texto oculto
+      SizedBox(
+        width: 200, // Ajuste a largura conforme necessário
+        child: TextField(
+          controller: TextEditingController(text: user.password), // Controlador para a senha
+          obscureText: true, // Oculta o texto
+          readOnly: true, // Torna o campo apenas leitura
+          decoration: InputDecoration(
+            border: InputBorder.none, // Remove a borda
           ),
-          Container(
-            margin: EdgeInsets.all(10),
-            padding: EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: Color(0xFFF88B70),
-              borderRadius: BorderRadius.circular(8),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black26,
-                  blurRadius: 4,
-                  offset: Offset(2, 2),
-                ),
-              ],
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  user.password,
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                ),
-                IconButton(
-                  icon: Icon(Icons.edit),
-                  onPressed: () {
-                    _showEditDialog(context, 'password');
-                  },
-                ),
-              ],
-            ),
-          ),
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+        ),
+      ),
+      IconButton(
+        icon: Icon(Icons.edit),
+        onPressed: () {
+          _showEditDialog(context, 'password');
+        },
+      ),
+    ],
+  ),
+),
           Padding(
             padding: const EdgeInsets.all(10),
             child: Text(
