@@ -1,16 +1,26 @@
-# myapp
+Diário Emocional - (App de Diário de Emoções)
 
-A new Flutter project.
+Objetivo: O usuário pode registrar suas emoções diárias e adicionar notas sobre como se sentiu, com ícones e categorias para representar as emoções.
 
-## Getting Started
+Widgets: Text, Icon, ListView, TextField
 
-This project is a starting point for a Flutter application.
+Stateful Widget: Para adicionar e editar registros de emoções
 
-A few resources to get you started if this is your first Flutter project:
+Stateless Widget: Para exibir o resumo diário de emoções
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Scaffold: Estrutura básica com AppBar e um FloatingActionButton para adicionar registros
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+List: Para exibir uma lista de emoções diárias
+
+Map: Para armazenar as emoções e notas (ex: {'data': '01/01/2024', 'emocoes': 'Feliz'})
+
+Layout: Uso de colunas para detalhar o dia e as emoções
+
+Estilização: Customizar a exibição de ícones das emoções
+
+Botões: Para navegar entre os registros e adicionar novos
+
+Navegação: Entre tela de registros e tela de adicionar nova emoção
+
+
+![image](https://github.com/user-attachments/assets/c8b8ec75-e44b-44e6-b4e0-b2dfedd1ae90)
