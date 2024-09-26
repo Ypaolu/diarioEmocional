@@ -444,6 +444,7 @@ class _HomeState extends State<Home> {
     setState(() {
       _emotions.add(newEmotion);
       _descriptionController.clear();
+      _selectedEmoji = '';
     });
   }
 
@@ -484,9 +485,9 @@ class _HomeState extends State<Home> {
           IconButton(
             onPressed: () {
               Navigator.pop(
-                  context,
-                  MaterialPageRoute(builder: (context) => Login()), // Página Home
-                );
+                context,
+                MaterialPageRoute(builder: (context) => Login()), // Página Home
+              );
             },
             icon: Icon(Icons.door_back_door, size: 30, color: Colors.black),
           ),
@@ -549,8 +550,7 @@ class _HomeState extends State<Home> {
                         onPressed: () => _changeEmoji('feliz'),
                         child: Text(
                           _happyEmojis[_happyIndex],
-                          style: TextStyle(fontSize: 45,
-                          color: Colors.black),
+                          style: TextStyle(fontSize: 45, color: Colors.black),
                         ),
                       ),
                       FloatingActionButton(
@@ -561,8 +561,7 @@ class _HomeState extends State<Home> {
                         onPressed: () => _changeEmoji('outro'),
                         child: Text(
                           _neutralEmojis[_neutralIndex],
-                          style: TextStyle(fontSize: 45,
-                          color: Colors.black),
+                          style: TextStyle(fontSize: 45, color: Colors.black),
                         ),
                       ),
                       FloatingActionButton(
@@ -573,8 +572,7 @@ class _HomeState extends State<Home> {
                         onPressed: () => _changeEmoji('triste'),
                         child: Text(
                           _sadEmojis[_sadIndex],
-                          style: TextStyle(fontSize: 45,
-                          color: Colors.black),
+                          style: TextStyle(fontSize: 45, color: Colors.black),
                         ),
                       ),
                     ],
@@ -771,11 +769,12 @@ class History extends StatelessWidget {
       backgroundColor: Color(0xFFECA38F),
       appBar: AppBar(
         leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: Icon(Icons.keyboard_return_sharp, size: 30, color: Colors.black),
-          ),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon:
+              Icon(Icons.keyboard_return_sharp, size: 30, color: Colors.black),
+        ),
         title: Text("HISTÓRICO EMOCIONAL"),
         centerTitle: true,
         backgroundColor: Color(0xFFEB5E7F),
@@ -792,9 +791,7 @@ class History extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
                   date,
-                  style: TextStyle(
-                    fontSize: 24, 
-                    fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                 ),
               ),
               ...timeEntries.map((timeEntry) {
@@ -901,7 +898,8 @@ class History extends StatelessWidget {
               ),
               TextField(
                 controller: _noteController,
-                decoration: InputDecoration(hintText: "DESCREVA COMO ESTAVA SE SENTINDO"),
+                decoration: InputDecoration(
+                    hintText: "DESCREVA COMO ESTAVA SE SENTINDO"),
                 maxLines: 4,
               ),
             ],
@@ -909,28 +907,28 @@ class History extends StatelessWidget {
           actions: [
             TextButton(
               onPressed: () {
-              if (_noteController.text.isNotEmpty &&
-                  _emotionController.text.isNotEmpty) {
-                onEdit(index, _emotionController.text, _noteController.text);
-                Navigator.of(context).pop();
-              }
-            },
+                if (_noteController.text.isNotEmpty &&
+                    _emotionController.text.isNotEmpty) {
+                  onEdit(index, _emotionController.text, _noteController.text);
+                  Navigator.of(context).pop();
+                }
+              },
               child: Text('SALVAR',
-              style: TextStyle(
-                fontSize: 20,
-                color: Colors.black,
-              )),
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.black,
+                  )),
             ),
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
               },
               child: Text('CANCELAR',
-              style: TextStyle(
-                fontSize: 20,
-                color: Colors.black,
-              )),
-              ),
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.black,
+                  )),
+            ),
           ],
         );
       },
@@ -1002,11 +1000,12 @@ class ConfiguracoesPage extends StatelessWidget {
       backgroundColor: Color(0xFFECA38F),
       appBar: AppBar(
         leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: Icon(Icons.keyboard_return_sharp, size: 30, color: Colors.black),
-          ),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon:
+              Icon(Icons.keyboard_return_sharp, size: 30, color: Colors.black),
+        ),
         title: const Text('CONFIGURAÇÕES'),
         centerTitle: true,
         backgroundColor: Color(0xFFEB5E7F),
