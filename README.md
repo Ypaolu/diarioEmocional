@@ -24,6 +24,7 @@ Navegação: Entre tela de registros e tela de adicionar nova emoção
 
 
 ![image](https://github.com/user-attachments/assets/c8b8ec75-e44b-44e6-b4e0-b2dfedd1ae90)
+![image](https://github.com/user-attachments/assets/5e1339fc-8b50-42c6-b9f6-b3da07919b56)
 ![image](https://github.com/user-attachments/assets/8a9f8e7a-5659-43cd-8483-6f289345c5bf)
 ![image](https://github.com/user-attachments/assets/9ebaf532-af88-4b20-b1ac-9de664f9b87f)
 ![image](https://github.com/user-attachments/assets/f4472320-eb16-419e-bd25-a3751271d4c4)
